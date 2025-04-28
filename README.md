@@ -12,17 +12,33 @@ Write a C program to print even numbers ranging from M to N (including M and N v
 7.	Continue the loop until you have iterated through all numbers from M to N.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() {
+    int M, N, i;
+    
+    // Input M and N
+    printf("Enter starting number (M): ");
+    scanf("%d", &M);
+    
+    printf("Enter ending number (N): ");
+    scanf("%d", &N);
+    
+    printf("\nEven numbers between %d and %d are:\n", M, N);
+    
+    // Loop from M to N
+    for(i = M; i <= N; i++) {
+        if(i % 2 == 0) {
+            printf("%d ", i);
+        }
+    }
+    
+    return 0;
+}
+```
 ## OUTPUT:
-
-
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/1cc37767-0673-4da8-a7fb-fee92c261892)
 
 ## RESULT:
 Thus the program to print even numbers ranging from M to N (including M and N values) has been executed successfully
@@ -45,11 +61,34 @@ Write a C program to print the given triangular pattern using loop.
 5.	Continue the loop until you have printed the entire triangular pattern.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+
+int main() {
+    int i, j, rows;
+
+    // Input number of rows
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+
+    // Outer loop for each row
+    for(i = 1; i <= rows; i++) {
+        // Inner loop for printing stars
+        for(j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n"); // Move to the next line
+    }
+
+    return 0;
+}
+
+```
 
 
 ## OUTPUT:
 
-
+![image](https://github.com/user-attachments/assets/8c5dedf7-54ca-4efb-9fcc-8d449d9a25a5)
 
 
 
@@ -74,14 +113,42 @@ Write a C program to perform addition and subtraction of two numbers using funct
 4.	Call the addition and subtraction functions, passing the two numbers as arguments.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+// Function to add two numbers
+void add(int a, int b) {
+    int sum = a + b;
+    printf("Addition = %d\n", sum);
+}
+
+// Function to subtract two numbers
+void subtract(int a, int b) {
+    int difference = a - b;
+    printf("Subtraction = %d\n", difference);
+}
+
+int main() {
+    int num1, num2;
+    
+    // Input two numbers
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+    
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+    
+    // Call functions
+    add(num1, num2);
+    subtract(num1, num2);
+    
+    return 0;
+}
+```
 
 ## OUTPUT:
 
-
-
-
-
+![image](https://github.com/user-attachments/assets/658e1ae0-cecc-450e-953c-8d385b6d1e49)
 
 ## RESULT:
 
@@ -106,10 +173,35 @@ Write a c program to find the sum of odd digits using for loop
 6.	Print the sum of odd digits.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() {
+    int num, digit, sum = 0;
+    
+    // Input a number
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    // Loop to process each digit
+    for(; num > 0; num = num / 10) {
+        digit = num % 10; // Get the last digit
+        
+        if(digit % 2 != 0) { // Check if the digit is odd
+            sum = sum + digit;
+        }
+    }
+    
+    // Display the result
+    printf("Sum of odd digits = %d\n", sum);
+    
+    return 0;
+}
+```
 
 ## OUTPUT:
 
+![image](https://github.com/user-attachments/assets/1a0a1cf7-e836-4399-8eda-cc8b56925a42)
 
 
 
@@ -136,9 +228,40 @@ d.	After the loop, print the factorial value.
 5.	End
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+// Function to calculate factorial
+void factorial(int n) {
+    int i, fact = 1;
+    
+    for(i = 1; i <= n; i++) {
+        fact = fact * i;
+    }
+    
+    printf("Factorial of %d = %d\n", n, fact);
+}
+
+int main() {
+    int num;
+    
+    // Input a number
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    if(num < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+    } else {
+        // Call the factorial function
+        factorial(num);
+    }
+    
+    return 0;
+}
+```
 
 ## OUTPUT:
+![image](https://github.com/user-attachments/assets/ed1a3c86-6b76-459f-b687-21b0e71e1990)
 
 ## RESULT:
 The program correctly computes the factorial of a given number using a separate function and displays the result.
