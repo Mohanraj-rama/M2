@@ -247,6 +247,7 @@ int fact(int n)
 ## OUTPUT:
 ![image](https://github.com/user-attachments/assets/ae346899-8587-483c-b583-a5cc932ee38b)
 
+
 ## RESULT:
 The program correctly computes the factorial of a given number using a separate function and displays the result.
  
